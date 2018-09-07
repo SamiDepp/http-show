@@ -1,0 +1,14 @@
+<ul>
+  <li *ngFor="let post of _posts">
+  <b>{{post.title}}</b> &nbsp; {{post.body}} &nbsp;<button (click)="showPost(post.id)">Show</button>
+  </li>
+</ul>
+<div *ngIf="_error">Error: {{_error.status}}: {{_error.statusText}} </div>
+
+  <div #modal  id="myModal" class="modal">
+  <div class="modal-content">
+  <span class="close" (click)="closeModal()">&times;</span>
+  <h3>{{this._post.title}}</h3>
+  <p>{{this._post.body}}</p>
+  </div>
+  </div>
